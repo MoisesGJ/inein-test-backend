@@ -3,6 +3,9 @@
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+//controllers
+use App\Http\Controllers\RegisterController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -14,5 +17,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::post('/register', [RegisterController::class, 'register']);
 Route::post('/login', [\App\Http\Controllers\AuthController::class, 'login']);
 Route::post('/logout', [\App\Http\Controllers\AuthController::class, 'logout'])->middleware('auth:sanctum');
